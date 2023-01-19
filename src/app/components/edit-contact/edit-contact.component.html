@@ -5,10 +5,44 @@
     <h3 *ngIf="contact.id">Delete or Update Contact</h3>
     <h3 *ngIf="!contact.id">Create New Contact</h3>
 
+   
+    <p>
+        <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input matInput [(ngModel)]="contact.firstName" placeholder="First Name" value="{{contact.firstName}}" required> 
+        </mat-form-field> 
+    </p>
+    
+
+    <p>
+        <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input matInput [(ngModel)]="contact.lastName" placeholder="Last Name" value="{{contact.lastName}}" required>  
+        </mat-form-field>
+    </p>
+    
+    <p>
+        <mat-form-field>
+            <mat-label>Address</mat-label>
+            <input matInput [(ngModel)]="contact.address" placeholder="Address" value="{{contact.address}}" required>  
+        </mat-form-field>
+    </p>
+    
+        <p>
+        <mat-form-field>
+            <mat-label>Phone Number</mat-label>
+            <input matInput [(ngModel)]="contact.phoneNumber" placeholder="Phone Number" value="{{contact.phoneNumber}}" required>  
+        </mat-form-field>
+        </p>
+    
+      
+     
+
+<!-- No styling
     <div>
         First Name:
         <input [(ngModel)]="contact.firstName" placeholder="First Name" required>        
-        <!-- ngModel requires import in app.module->imports -->
+        <!-- ngModel requires import in app.module->imports >
     </div>
 
     <div>
@@ -25,6 +59,7 @@
         Phone Number:
         <input [(ngModel)]="contact.phoneNumber" placeholder="Phone Number" required>
     </div>
+    -->
     <button mat-raised-button (click) = "updateContact(contact)" *ngIf="contact.id">Update</button>
     <button mat-raised-button (click) = "deleteContact(contact)" *ngIf="contact.id">Delete</button>
     <button mat-raised-button (click) = "createContact(contact)" *ngIf="!contact.id">Save</button>
